@@ -85,28 +85,31 @@ void draw ()
     //Resets to 
     x = 50;
     y = 50;
-  rect(x,y,10,10);
-background(0);
-rect(1400,1,50,1500);
-  fill(255,255,255);
+    rect(x,y,10,10);
+    background(0);
+    rect(1400,1,50,1500);
+    fill(255,255,255);
 
-  rect(0,0,1500,50);
-  fill(255,255,255);
+    rect(0,0,1500,50);
+    fill(255,255,255);
 
-  rect(0,0,50,1500);
-  fill(255,255,255);
+    rect(0,0,50,1500);
+    fill(255,255,255);
 
-  rect(50,850,1500,50);
-  fill(255,255,255);
-draw = draw + 1;
-fill (255,255,255);
-textSize(20);
-text(draw,1000,40);
-fill (255,255,255);
-textSize(40);
-text("Use Keys to Free Draw",550,40);
-fill (255,255,255);
-textSize(20);
-text("Click Enter to Restart",550,80);
+    rect(50,850,1500,50);
+    fill(255,255,255);
+    
+    draw = draw + 1;
+    fill (255,255,255);
+    textSize(20);
+    text(draw,1000,40);
+    
+    fill (255,255,255);
+    textSize(40);
+    text("Use Keys to Free Draw",550,40);
+    ing 
+    fill (255,255,255);
+    textSize(20);
+    text("Click Enter to Restart",550,80);
 }
 }
