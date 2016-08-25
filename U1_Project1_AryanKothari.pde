@@ -1,5 +1,6 @@
 
 
+
 /*
 Free Draw project by Aryan Kothari
  
@@ -16,7 +17,7 @@ int screen = 0;
 int red = 0;
 int green = 255;
 int blue = 0;
-int size = 5;
+float size = 5;
 import ddf.minim.*;
 import ddf.minim.analysis.*;
 import ddf.minim.effects.*;
@@ -88,6 +89,24 @@ void keyPressed()
     fill(255, 0, 0);
     textSize(20);
     text("Portrait: #", 1280, 30);
+    
+    fill(0,0,255);
+    rect(200,840,230,50);
+  
+    fill(0,0,0);
+    textSize(35);
+    text("Bigger: W Key", 200, 870);
+    
+    fill(0,0,255);
+    rect(500,840,235,50);
+    
+    fill(0, 0, 0);
+    textSize(35);
+    text("Smaller: S Key", 500, 870);
+    
+    fill(255,255,255);
+    textSize(30);
+    text(size, 60, 870);
 
     fill(255, 0, 0);
     textSize(20);
@@ -148,12 +167,40 @@ void draw ()
     textSize(20);
     text(portrait, 1378, 30);
 
-    fill(255, 0, 0);
-    textSize(35);
-    text("Size Bigger", 200, 870);
+    fill(0,0,255);
+    rect(200,840,230,50);
+    
+    fill(0,0,0);
+    textSize(20);
+    text("Bigger: W Key", 200, 870);
+    
+    fill(0,0,255);
+    rect(500,840,235,50);
+    
+    fill(0, 0, 0);
+    textSize(20);
+    text("Smaller: S Key", 500, 870);
+    
+    
+    fill(0,0,255);
+    rect(800,840,230,50);
+    
+    fill(0,0,0);
+    textSize(20);
+    text("1 for Random Color", 800, 870);
+    
+        
+    fill(0,0,255);
+    rect(1100,840,230,50);
+    
+    fill(0,0,0);
+    textSize(20);
+    text("E to Erase", 1100, 870);
+    
 
     screen = 1; 
     portrait = portrait + 1;
+    
 
 
     //border lines
@@ -173,9 +220,31 @@ void draw ()
 
   if (screen == 1) //Free Draw Scene 
   {
-    if (mousePressed & mouseX >= 75 & mouseX <= 1350 & mouseY >= 75 & mouseY <= 800)
+    fill(255,255,255);
+    textSize(30);
+    text(size, 60, 870);
+     if (keyPressed)
+      {
+        if (key == 'w')
+          size = size + 0.5;
+      }
+      if (keyPressed)
+      {
+        if (key == 's')
+          size = size - 0.5;
+        }
+      if (keyPressed) //Make size bigger 
+      {
+        if (key == '1' || key == '1') 
+        
+        blue = 255;
+        green = 0;
+        red = 0;
+      }
+     
+    if (mousePressed & mouseX >= 80 & mouseX <= 1350 & mouseY >= 80 & mouseY <= 800)
     {
-      fill(255, 255, 255);
+      fill(255,255,255);
       rect(0, 0, 150, 50);
 
       fill(0, 0, 0);
@@ -187,31 +256,6 @@ void draw ()
       fill(red, green, blue);
       line(pmouseX, pmouseY, mouseX, mouseY);
       ellipse(mouseX, mouseY, w, h);
-
-      if (keyPressed)
-      {
-        if (key == 'w')
-          size = size + 1;
-      }
-      if (keyPressed)
-      {
-        if (key == 's')
-          size = size - 1;
-      }
-      if (keyPressed) //Make size bigger 
-      {
-        if (key == '1' || key == '1') 
-          red = 255;
-        green = 0;
-        blue = 0;
-      }
-      if (keyPressed) //Make size bigger 
-      {
-        if (key == '2' || key == '2') 
-          red= 0;
-        green = 0;
-        blue = 255;
-      }
     }
   }
   if (screen == 0 & mousePressed & mouseX >= 620 & mouseX <= 800 & 
@@ -280,11 +324,6 @@ void draw ()
   }
 }
 
-
-
-
-
-//future goals for project:
-//Add Song 
-//function to change color properly
-//problem is that the borders are grabing size and color. Why?
+//how to make it fill random colors (give random ints) when click 1
+//why is black popping up when i play with size
+//how to digitize size
