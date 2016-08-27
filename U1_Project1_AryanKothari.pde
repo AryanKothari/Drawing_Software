@@ -63,8 +63,9 @@ void setup ()
 
 void keyPressed()
 {
-  if (keyCode == ENTER) //Enter Free Draw 
-  {
+  
+   if (keyCode == ENTER) //Enter Free Draw 
+   {
     w = 10;
     h = 10;
 
@@ -234,12 +235,14 @@ void draw ()
       fill(255,255,255);
       textSize(30);
       text(size, 60, 870);
+      
       if (keyPressed)
       {
         if (key == 'w')
         {
           size = size + 0.5;
         }
+      }
         if (keyPressed)
         {
           if (key == 's')
@@ -263,6 +266,7 @@ void draw ()
           {
             blue = 0;
             green = 0;
+            red = 0;
           }
         }
         if (mousePressed & mouseX >= 80 & mouseX <= 1350 & mouseY >= 80 & mouseY <= 800)
@@ -348,4 +352,3 @@ void draw ()
         screen = 0;
       }
     }
-}
