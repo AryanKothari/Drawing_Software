@@ -14,9 +14,9 @@ int w = 10;
 int h = 10;
 int portrait = 0;
 int screen = 0;
-int red = 0;
-int green = 255;
-int blue = 0;
+float red = 0;
+float green = 255;
+float blue = 0;
 float size = 5;
 import ddf.minim.*;
 import ddf.minim.analysis.*;
@@ -65,13 +65,8 @@ void keyPressed()
 {
   if (keyCode == ENTER) //Enter Free Draw 
   {
-    //Resets to iniial x and y values
-    w = 10;
+     w = 10;
     h = 10;
-
-
-    //black background 
-    background(0);
 
     fill(red,green,blue);
     noStroke();
@@ -82,6 +77,10 @@ void keyPressed()
     text("Home Page", 10, 25);
 
 
+    //black background 
+    background(0);
+
+
     fill (255, 0, 0);
     textSize(50);
     text("Free Draw", 600, 40);
@@ -89,33 +88,46 @@ void keyPressed()
     fill(255, 0, 0);
     textSize(20);
     text("Portrait: #", 1280, 30);
-    
+
+    fill(255, 0, 0);
+    textSize(20);
+    text(portrait, 1378, 30);
+
     fill(0,0,255);
     rect(200,840,230,50);
-  
+    
     fill(0,0,0);
-    textSize(35);
+    textSize(20);
     text("Bigger: W Key", 200, 870);
     
     fill(0,0,255);
     rect(500,840,235,50);
     
     fill(0, 0, 0);
-    textSize(35);
+    textSize(20);
     text("Smaller: S Key", 500, 870);
     
-    fill(255,255,255);
-    textSize(30);
-    text(size, 60, 870);
-
-    fill(255, 0, 0);
+    
+    fill(0,0,255);
+    rect(800,840,230,50);
+    
+    fill(0,0,0);
     textSize(20);
-    text(portrait, 1378, 30);
+    text("1 for Random Color", 800, 870);
+    
+        
+    fill(0,0,255);
+    rect(1100,840,230,50);
+    
+    fill(0,0,0);
+    textSize(20);
+    text("E to Erase", 1100, 870);
+    
 
     screen = 1; 
     portrait = portrait + 1;
     
-    noStroke();
+
 
     //border lines
     fill(255, 255, 255);
@@ -129,7 +141,7 @@ void keyPressed()
 
     fill(255, 255, 255);
     rect(72, 74, 1291, 5);
-  }
+}
 }
 
 
@@ -223,34 +235,52 @@ void draw ()
     fill(255,255,255);
     textSize(30);
     text(size, 60, 870);
+    
      if (keyPressed)
       {
         if (key == 'w')
+        {
           size = size + 0.5;
+      }
       }
       if (keyPressed)
       {
         if (key == 's')
+        {
           size = size - 0.5;
         }
+      }
       if (keyPressed) //Make size bigger 
       {
         if (key == '1' || key == '1') 
-        
-        blue = 255;
-        green = 0;
-        red = 0;
+        {
+        blue = random(255);
+        green = random(255);
+        red = random(255);
       }
-     
+      }
+      
+      if (keyPressed)
+      {
+        if (key == 'e') 
+        {
+          blue = 0;
+          green = 0;
+          red = 0;
+        }
+      }
+
     if (mousePressed & mouseX >= 80 & mouseX <= 1350 & mouseY >= 80 & mouseY <= 800)
     {
-      fill(255,255,255);
+      strokeWeight(10);
+      fill(red,green,blue);
       rect(0, 0, 150, 50);
 
       fill(0, 0, 0);
       textSize(25);
       text("Home Page", 10, 25);
 
+   
       strokeWeight(size);
       stroke(red, green, blue);
       fill(red, green, blue);
