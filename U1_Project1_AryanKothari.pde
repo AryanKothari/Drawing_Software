@@ -66,83 +66,8 @@ void keyPressed()
   
    if (keyCode == ENTER) //Enter Free Draw 
    {
-    w = 10;
-    h = 10;
-
-    fill(red,green,blue);
-    noStroke();
-    rect(0, 0, 150, 50);
-
-    fill(0, 0, 0);
-    textSize(25);
-    text("Home Page", 10, 25);
-
-
-    //black background 
-    background(0);
-
-
-    fill (255, 0, 0);
-    textSize(50);
-    text("Free Draw", 600, 40);
-
-    fill(255, 0, 0);
-    textSize(20);
-    text("Portrait: #", 1280, 30);
-
-    fill(255, 0, 0);
-    textSize(20);
-    text(portrait, 1378, 30);
-
-    fill(0,0,255);
-    rect(200,840,230,50);
-    
-    fill(0,0,0);
-    textSize(20);
-    text("Bigger: W Key", 200, 870);
-    
-    fill(0,0,255);
-    rect(500,840,235,50);
-    
-    fill(0, 0, 0);
-    textSize(20);
-    text("Smaller: S Key", 500, 870);
-    
-    
-    fill(0,0,255);
-    rect(800,840,230,50);
-    
-    fill(0,0,0);
-    textSize(20);
-    text("1 for Random Color", 800, 870);
-    
-        
-    fill(0,0,255);
-    rect(1100,840,230,50);
-    
-    fill(0,0,0);
-    textSize(20);
-    text("E to Erase", 1100, 870);
-    
-
-    screen = 1; 
-    portrait = portrait + 1;
-    
-
-
-    //border lines
-    fill(255, 255, 255);
-    rect(72, 75, 5, 735);
-
-    fill(255, 255, 255);
-    rect(1358, 75, 5, 735);
-
-    fill(255, 255, 255);
-    rect(72, 808, 1291, 5);
-
-    fill(255, 255, 255);
-    rect(72, 74, 1291, 5);
-  }
+     FreeDraw();
+   }
 }
 
 
@@ -152,82 +77,7 @@ void draw ()
   if (screen == 0 & mousePressed & mouseX >= 620 & mouseX <= 800 & 
     mouseY >= 400 & mouseY <= 450)
     {
-      w = 10;
-      h = 10;
-
-      fill(red,green,blue);
-      noStroke();
-      rect(0, 0, 150, 50);
-
-      fill(0, 0, 0);
-      textSize(25);
-      text("Home Page", 10, 25);
-
-
-      //black background 
-      background(0);
-
-
-      fill (255, 0, 0);
-      textSize(50);
-      text("Free Draw", 600, 40);
-
-      fill(255, 0, 0);
-      textSize(20);
-      text("Portrait: #", 1280, 30);
-
-      fill(255, 0, 0);
-      textSize(20);
-      text(portrait, 1378, 30);
-
-      fill(0,0,255);
-      rect(200,840,230,50);
-    
-      fill(0,0,0);
-      textSize(20);
-      text("Bigger: W Key", 200, 870);
-    
-      fill(0,0,255);
-      rect(500,840,235,50);
-    
-      fill(0, 0, 0);
-      textSize(20);
-      text("Smaller: S Key", 500, 870);
-    
-    
-      fill(0,0,255);
-      rect(800,840,230,50);
-    
-      fill(0,0,0);
-      textSize(20);
-      text("1 for Random Color", 800, 870);
-    
-        
-      fill(0,0,255);
-      rect(1100,840,230,50);
-    
-      fill(0,0,0);
-      textSize(20);
-      text("E to Erase", 1100, 870);
-    
-
-      screen = 1; 
-      portrait = portrait + 1;
-    
-
-
-      //border lines
-      fill(255, 255, 255);
-      rect(72, 75, 5, 735);
-
-      fill(255, 255, 255);
-      rect(1358, 75, 5, 735);
-
-      fill(255, 255, 255);
-      rect(72, 808, 1291, 5);
-
-      fill(255, 255, 255);
-      rect(72, 74, 1291, 5);
+      FreeDraw();
     }
     
     if (screen == 1) //Free Draw Scene 
@@ -351,4 +201,84 @@ void draw ()
 
         screen = 0;
       }
+    }
+    
+    void FreeDraw()
+    {
+      w = 10;
+      h = 10;
+
+      fill(red,green,blue);
+       noStroke();
+      rect(0, 0, 150, 50);
+  
+      fill(0, 0, 0);
+      textSize(25);
+      text("Home Page", 10, 25);
+  
+
+      //black background 
+      background(0);
+
+
+      fill (255, 0, 0);
+      textSize(50);
+      text("Free Draw", 600, 40);
+
+      fill(255, 0, 0);
+      textSize(20);
+      text("Portrait: #", 1280, 30);
+
+      fill(255, 0, 0);
+      textSize(20);
+      text(portrait, 1378, 30);
+
+      fill(0,0,255);
+      rect(200,840,230,50);
+    
+      fill(0,0,0);
+      textSize(20);
+      text("Bigger: W Key", 200, 870);
+    
+      fill(0,0,255);
+      rect(500,840,235,50);
+    
+      fill(0, 0, 0);
+      textSize(20);
+      text("Smaller: S Key", 500, 870);
+    
+    
+      fill(0,0,255);
+      rect(800,840,230,50);
+    
+      fill(0,0,0);
+      textSize(20);
+      text("1 for Random Color", 800, 870);
+    
+        
+      fill(0,0,255);
+      rect(1100,840,230,50);
+    
+      fill(0,0,0);
+      textSize(20);
+      text("E to Erase", 1100, 870);
+    
+
+      screen = 1; 
+      portrait = portrait + 1;
+    
+
+
+      //border lines
+      fill(255, 255, 255);
+      rect(72, 75, 5, 735);
+
+      fill(255, 255, 255);
+      rect(1358, 75, 5, 735);
+
+      fill(255, 255, 255);
+      rect(72, 808, 1291, 5);
+  
+      fill(255, 255, 255);
+      rect(72, 74, 1291, 5);
     }
