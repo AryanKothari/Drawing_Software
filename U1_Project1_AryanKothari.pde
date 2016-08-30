@@ -28,7 +28,7 @@ AudioPlayer input;
 
 void setup ()
 {
-  minim = new Minim(this);
+  minim = new Minim(this); //Music 
   song = minim.loadFile("Elevator Music.mp3");
   song.loop();
   fullScreen();
@@ -85,19 +85,19 @@ void draw ()
 
     if (keyPressed)
     {
-      if (key == 'w')
+      if (key == 'w') //Bigger Size
       {
         size = size + 0.5;
       }
     }
-    if (keyPressed)
+    if (keyPressed) //Smaller Size
     {
       if (key == 's')
       {
         size = size - 0.5;
       }
     }
-    if (keyPressed) //Make size bigger 
+    if (keyPressed) //MCOlor Change
     {
       if (key == '1' || key == '1') 
       {
@@ -107,7 +107,7 @@ void draw ()
       }
     }
 
-    if (keyPressed)
+    if (keyPressed) //Erase Button
     {
       if (key == 'e') 
       {
@@ -116,7 +116,7 @@ void draw ()
         red = 0;
       }
     }
-    if (mousePressed & mouseX >= 80 & mouseX <= 1350 & mouseY >= 80 & mouseY <= 800)
+    if (mousePressed & mouseX >= 80 & mouseX <= 1350 & mouseY >= 80 & mouseY <= 800) // Home Page Button 
     {
       strokeWeight(10);
       fill(red, green, blue);
@@ -135,7 +135,7 @@ void draw ()
     }
   }
   if (screen == 0 & mousePressed & mouseX >= 620 & mouseX <= 800 & 
-    mouseY >= 480 & mouseY <= 520)
+    mouseY >= 480 & mouseY <= 520) //Enter Instructions Page
   {
     {
       background(0);
@@ -200,7 +200,7 @@ void draw ()
   }
 }
 
-void FreeDraw()
+void FreeDraw() //custom function
 {
   w = 10;
   h = 10;
